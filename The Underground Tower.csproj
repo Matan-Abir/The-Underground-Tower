@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C787931-81F1-4F4E-B4F3-98AE9112C5D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TheUndergroundTower</RootNamespace>
+    <AssemblyName>TheUndergroundTower</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\Game\Gamefolder\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Monster.cs" />
+    <Compile Include="Creatures\Player.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Items\Armor.cs" />
+    <Compile Include="Character\Career.cs" />
+    <Compile Include="GameProperties\Definitions.cs" />
+    <Compile Include="Options\Difficulty.cs" />
+    <Compile Include="GameProperties\GameData.cs" />
+    <Compile Include="GameProperties\GameObject.cs" />
+    <Compile Include="GameProperties\GameStatus.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Pages\pageHighScores.xaml.cs">
+      <DependentUpon>pageHighScores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pageVictoryScreen.xaml.cs">
+      <DependentUpon>pageVictoryScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pathfinding\Algorithms.cs" />
+    <Compile Include="Pathfinding\Map.cs" />
+    <Compile Include="Pathfinding\Room.cs" />
+    <Compile Include="Pathfinding\Tile.cs" />
+    <Compile Include="Utilities\ObjectBase.cs" />
+    <Compile Include="Options\TowerDepth.cs" />
+    <Compile Include="Items\Weapon.cs" />
+    <Compile Include="Pages\pageCharacterCreation.xaml.cs">
+      <DependentUpon>pageCharacterCreation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pageMainGame.xaml.cs">
+      <DependentUpon>pageMainGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pageMainMenu.xaml.cs">
+      <DependentUpon>pageMainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Character\Race.cs" />
+    <Compile Include="Options\Sound.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="Windows\MetaMenus\ErrorPrompt.xaml.cs">
+      <DependentUpon>ErrorPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MetaMenus\ExitDialog.xaml.cs">
+      <DependentUpon>ExitDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MetaMenus\GenericWindow.xaml.cs">
+      <DependentUpon>GenericWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MetaMenus\Instructions.xaml.cs">
+      <DependentUpon>Instructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MetaMenus\ToHighScores.xaml.cs">
+      <DependentUpon>ToHighScores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MetaMenus\windowMessage.xaml.cs">
+      <DependentUpon>windowMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MetaMenus\windowOptions.xaml.cs">
+      <DependentUpon>windowOptions.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\pageCharacterCreation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pageHighScores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pageMainGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pageMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pageVictoryScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetaMenus\ErrorPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetaMenus\ExitDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetaMenus\GenericWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetaMenus\Instructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetaMenus\ToHighScores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetaMenus\windowMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MetaMenus\windowOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\dd-4th-edition-eberron-map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\XML Files\Races.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\Scroll-Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\XML Files\Careers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WpfApp1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\XML Files\XmlFileHighScores.xml" />
+    <Resource Include="Assets\XML Files\Items.xml" />
+    <Resource Include="Assets\Images\rltiles-2d.png" />
+    <Resource Include="Assets\Images\downhillduck.jpg" />
+    <Resource Include="Assets\Images\HighScores.png" />
+    <Content Include="Assets\Sounds\Nonstop.mp3" />
+    <Content Include="Assets\Sounds\Sword Slash.mp3" />
+    <Resource Include="Assets\XML Files\Tiles.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Assets\XML Files\Monsters.xml" />
+    <Resource Include="Assets\XML Files\TowerDepths.xml" />
+    <Resource Include="Assets\XML Files\Difficulties.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
